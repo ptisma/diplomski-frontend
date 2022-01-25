@@ -1,0 +1,14 @@
+{
+  "expo": {
+    "name": "demo-projekt",
+    "slug": "demo-projekt",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "android": {
+      "package": "petar.tisma.projekt.demo"
+    }
+  },
+  "name": "demo-projekt"
+}

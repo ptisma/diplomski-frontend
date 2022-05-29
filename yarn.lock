@@ -1262,6 +1262,21 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
+"@influxdata/influxdb-client-apis@^1.25.0":
+  version "1.25.0"
+  resolved "https://registry.yarnpkg.com/@influxdata/influxdb-client-apis/-/influxdb-client-apis-1.25.0.tgz#3797f91e16ffc29e416ec5bca0fa8691b890bcc0"
+  integrity sha512-Ej5s7yBz6/KPlBX3FL0E15Tdpx+Xs7f/k823f/l2/MZdbeTnYJS303n/iw/wGkHlSAZRaQSW8UA2Dbdin6PeEg==
+
+"@influxdata/influxdb-client-browser@^1.25.0":
+  version "1.25.0"
+  resolved "https://registry.yarnpkg.com/@influxdata/influxdb-client-browser/-/influxdb-client-browser-1.25.0.tgz#92bef37949b2774595aef8857265ac44d074e1c5"
+  integrity sha512-0D/pKRl7xRa3SALidmGgzOBBQA0jBeLI1VWMlDZkWUsccU9+du1+HTRlzAFkB8yUywPhh9XaJ6jWz01+DJHrzg==
+
+"@influxdata/influxdb-client@^1.25.0":
+  version "1.25.0"
+  resolved "https://registry.yarnpkg.com/@influxdata/influxdb-client/-/influxdb-client-1.25.0.tgz#60a854b818d920a3dcbeda780f4d69157dfbe42f"
+  integrity sha512-DC/sc2qAteIuUEyl9nKZNdt1746gS8w9Qu4gBsDEmOf+bQNUztjdApCWo0Rvz9h8pMb0kX/w3svKuxuYhpHehA==
+
 "@jest/create-cache-key-function@^26.5.0":
   version "26.6.2"
   resolved "https://registry.yarnpkg.com/@jest/create-cache-key-function/-/create-cache-key-function-26.6.2.tgz#04cf439207a4fd12418d8aee551cddc86f9ac5f5"
@@ -4872,6 +4887,15 @@ prop-types@^15.6.0, prop-types@^15.6.2, prop-types@^15.7.2:
     object-assign "^4.1.1"
     react-is "^16.8.1"
 
+prop-types@^15.6.1:
+  version "15.8.1"
+  resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
+  integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
+  dependencies:
+    loose-envify "^1.4.0"
+    object-assign "^4.1.1"
+    react-is "^16.13.1"
+
 pump@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/pump/-/pump-3.0.0.tgz#b4a2116815bde2f4e1ea602354e8c75565107a64"
@@ -4922,7 +4946,7 @@ react-dom@17.0.1:
     object-assign "^4.1.1"
     scheduler "^0.20.1"
 
-react-is@^16.13.0, react-is@^16.7.0, react-is@^16.8.1:
+react-is@^16.13.0, react-is@^16.13.1, react-is@^16.7.0, react-is@^16.8.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
@@ -4962,6 +4986,13 @@ react-native-element-dropdown@^1.5.5:
   resolved "https://registry.yarnpkg.com/react-native-element-dropdown/-/react-native-element-dropdown-1.5.5.tgz#2535f5940f3c678553df0acce07ba319555cf41a"
   integrity sha512-FNWnN6N4E3ooviYEhYCBFa6Fu6m23c8aH4vP0skXZvYElpGPKSDP4ieVc7WN/MzhHMFNKrDHJ4xmPK31sEgU6Q==
 
+react-native-element-textinput@^1.4.9:
+  version "1.4.9"
+  resolved "https://registry.yarnpkg.com/react-native-element-textinput/-/react-native-element-textinput-1.4.9.tgz#60d9d06eb25315c15b38ca76962594e56ae8ba79"
+  integrity sha512-+rlgHcGSLppD7zb4R0grcaJKMbC+NHxI47Ih2Cr492I8HOpapJzqTHcJc40wk9fvraz/bFq1/df8qw7Z/rkc3w==
+  dependencies:
+    react-native-virtualized-view "*"
+
 react-native-elements@^3.4.2:
   version "3.4.2"
   resolved "https://registry.yarnpkg.com/react-native-elements/-/react-native-elements-3.4.2.tgz#66602be9c5e0e0a2a831913adec80ff6518d1ee2"
@@ -4994,6 +5025,19 @@ react-native-modal@^13.0.0:
   dependencies:
     prop-types "^15.6.2"
     react-native-animatable "1.3.3"
+
+react-native-numeric-input@^1.9.1:
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/react-native-numeric-input/-/react-native-numeric-input-1.9.1.tgz#eff20699a51ecce6cbd1e3682f68dad981d84e35"
+  integrity sha512-uJiMjundXHiBcBLHgSqbfSjLdBM+4OBgLJLSsYG5/+XST5XWufsU8eZaEsn1miOkhjj2B7WgshjNX2Qm+4n3kw==
+  dependencies:
+    prop-types "^15.6.1"
+    react-native-pixel-perfect "^1.0.1"
+
+react-native-pixel-perfect@^1.0.1:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/react-native-pixel-perfect/-/react-native-pixel-perfect-1.0.2.tgz#8e6dc97e377caa4bd07f9e584ba438d53c0e25e8"
+  integrity sha512-0IvYCNkxuQbQC9q4tI+C3i6o38nbx916p7gBRBWuPxDhKBCuTkVV3VukcfW6vtjRlwQm6kwQcF9OtI+yUBt+YA==
 
 react-native-ratings@8.0.4:
   version "8.0.4"
@@ -5052,6 +5096,11 @@ react-native-svg@12.1.1:
     css-select "^2.1.0"
     css-tree "^1.0.0-alpha.39"
 
+react-native-virtualized-view@*:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/react-native-virtualized-view/-/react-native-virtualized-view-0.1.5.tgz#d908b6adc53e6aedac9c8106767067d525a08ac0"
+  integrity sha512-GYKck4rYPpG0dg3WSv6aPPGfyArRMT98VTs6jVhD7C8MlSOsvfNuWKVjSrQmUMSdjpjLDpRc5LgJW8u1VDi44w==
+
 react-native-web@0.17.1:
   version "0.17.1"
   resolved "https://registry.yarnpkg.com/react-native-web/-/react-native-web-0.17.1.tgz#90d473c89dd99b88bc9830b2a9fcdd2fc5f04902"
@@ -5064,6 +5113,16 @@ react-native-web@0.17.1:
     inline-style-prefixer "^6.0.0"
     normalize-css-color "^1.0.2"
     prop-types "^15.6.0"
+
+react-native-wheel-scrollview-picker@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-wheel-scrollview-picker/-/react-native-wheel-scrollview-picker-2.0.1.tgz#130fb9c4c6080376d4166d53e626c67d65193931"
+  integrity sha512-jNhOU/gsw9TDumMev4vMaIfR9Coicc4Pgo3kizdam0UC0NQga1gpLWnXuZoYIwEIDElwbHXAEGINOoiF1MM5Hw==
+
+react-native-wheely@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/react-native-wheely/-/react-native-wheely-0.4.1.tgz#f9dffcc73965825074c48bb69cb54b7d1850188a"
+  integrity sha512-fr4BTRy3YnnxmZeSHKGms4MPcvLC5rnGqfqes9lKDEYRmZTLwuCVOy5Lad/VH4MUI5VE+FM40AQ/JZldB2PFQw==
 
 react-native@0.64.3:
   version "0.64.3"

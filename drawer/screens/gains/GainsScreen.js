@@ -32,40 +32,40 @@ const GainsScreen = () => {
     ///microclimate/all
 
     try {
-      const cultures = await axios.get(ROOT_URL + "/culture/all");
-      setCultures(cultures.data);
-      /* const cultures = await axios.get(
-      "https://random-data-api.com/api/stripe/random_stripe"
-    );
-    setCultures([
-      {
-        id: 1,
-        name: "Barley",
-      },
-      {
-        id: 2,
-        name: "Chickpea",
-      },
-      {
-        id: 3,
-        name: "Maize",
-      },
-      {
-        id: 4,
-        name: "Oats",
-      },
-      {
-        id: 5,
-        name: "Wheat",
-      },
-    ]); */
+      /*  const cultures = await axios.get(ROOT_URL + "/culture/all");
+      setCultures(cultures.data); */
+      const cultures = await axios.get(
+        "https://random-data-api.com/api/stripe/random_stripe"
+      );
+      setCultures([
+        {
+          id: 1,
+          name: "Barley",
+        },
+        {
+          id: 2,
+          name: "Chickpea",
+        },
+        {
+          id: 3,
+          name: "Maize",
+        },
+        {
+          id: 4,
+          name: "Oats",
+        },
+        {
+          id: 5,
+          name: "Wheat",
+        },
+      ]);
     } catch (error) {
       console.log(error);
     }
   };
   const loadGain = async () => {
     try {
-      const response = await axios.post(
+      /* const response = await axios.post(
         ROOT_URL + `/culture/${selectedCulture.id}/monetary-gain`,
         {
           locationId: location.id,
@@ -73,12 +73,12 @@ const GainsScreen = () => {
       );
       console.log(ROOT_URL + `/culture/${selectedCulture.id}/monetary-gain`);
       console.log(response.data);
-      let gains = response.data;
-      /* const fetchedLocations = await axios.get(
+      let gains = response.data; */
+      const fetchedLocations = await axios.get(
         "https://random-data-api.com/api/stripe/random_stripe"
-      ); */
+      );
       //za yield id 1
-      /* let yields = [
+      let yields = [
         {
           year: 2014,
           yield: 0.0,
@@ -111,7 +111,7 @@ const GainsScreen = () => {
           year: 2021,
           yield: 0.0,
         },
-      ]; */
+      ];
       let first = gains[0].year;
       let maxGain = 0;
       let data = gains.map((e) => {

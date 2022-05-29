@@ -1,25 +1,22 @@
 import React from "react";
+import { View, Text, StyleSheet, useColorScheme } from "react-native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import {
-  View,
-  Text,
-  StyleSheet,
-  useColorScheme,
+  NavigationContainer,
   DefaultTheme,
   DarkTheme,
-} from "react-native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { NavigationContainer } from "@react-navigation/native";
+} from "@react-navigation/native";
 
 import Drawer from "./drawer/Drawer";
 import { useSelector } from "react-redux";
 import LocationScreen from "./screens/location/LocationScreen";
 
 const Stack = createNativeStackNavigator();
-
 const Main = () => {
   const { location, set } = useSelector((state) => state.location.value);
+  const scheme = useColorScheme();
   return (
-    <NavigationContainer theme={DarkTheme}>
+    <NavigationContainer theme={scheme === "dark" ? DarkTheme : DefaultTheme}>
       <Stack.Navigator
         screenOptions={{
           headerStyle: {},

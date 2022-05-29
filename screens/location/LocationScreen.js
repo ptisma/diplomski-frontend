@@ -7,7 +7,6 @@ import { enterLocation } from "../../redux/features/location";
 import { Button } from "react-native-elements";
 import { ROOT_URL } from "../../constants/URL";
 
-const root = "http://4efa-95-168-120-85.ngrok.io";
 const LocationScreen = ({ navigation }) => {
   const [locations, setLocations] = useState([]);
   const [location, setLocation] = useState(null);
@@ -16,20 +15,21 @@ const LocationScreen = ({ navigation }) => {
 
   const loadData = async () => {
     try {
-      const fetchedLocations = await axios.get(ROOT_URL + "/location/all");
+      console.log("Fetching locations");
+      const fetchedLocations = await axios.get(ROOT_URL + "/location");
       setLocations(fetchedLocations.data);
-      console.log(fetchedLocations.data);
+      //console.log(fetchedLocations.data);
       /* const fetchedLocations = await axios.get(
         "https://random-data-api.com/api/stripe/random_stripe"
       );
-      setLocations([
+     /*  setLocations([
         {
           id: 1,
           name: "Zagreb",
         },
         {
           id: 2,
-          name: "Split",
+          name: "Osijek",
         },
       ]); */
     } catch (error) {

@@ -11,6 +11,7 @@ import { useDispatch } from "react-redux";
 import { enterLocation } from "../redux/features/location";
 import GainsScreen from "./screens/gains/GainsScreen";
 import { useSelector } from "react-redux";
+import GddScreen from "./screens/gdd/GddScreen";
 const DrawerContainer = createDrawerNavigator();
 const Drawer = ({ navigation }) => {
   const dispatch = useDispatch();
@@ -33,6 +34,10 @@ const Drawer = ({ navigation }) => {
             <Button
               title="Gains"
               onPress={() => props.navigation.navigate("Gains")}
+            />
+            <Button
+              title="Growing degree day"
+              onPress={() => props.navigation.navigate("GDD")}
             />
             <Button
               title="Change location"
@@ -66,6 +71,15 @@ const Drawer = ({ navigation }) => {
       <DrawerContainer.Screen
         name="Gains"
         component={GainsScreen}
+        options={{
+          headerRight: (props) => (
+            <Text style={styles.headerRight}>{location.name}</Text>
+          ),
+        }}
+      />
+      <DrawerContainer.Screen
+        name="GDD"
+        component={GddScreen}
         options={{
           headerRight: (props) => (
             <Text style={styles.headerRight}>{location.name}</Text>

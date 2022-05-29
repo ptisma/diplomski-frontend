@@ -54,8 +54,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderRadius: 30,
     borderColor: "rgb(39, 39, 39)",
-  },
-  buttonContainer: {
-    marginRight: 50,
+    marginHorizontal: 10,
+    marginVertical: 5,
   },
 });

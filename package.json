@@ -7,6 +7,9 @@
     "start": "react-native start"
   },
   "dependencies": {
+    "@influxdata/influxdb-client": "^1.25.0",
+    "@influxdata/influxdb-client-apis": "^1.25.0",
+    "@influxdata/influxdb-client-browser": "^1.25.0",
     "@react-native-community/datetimepicker": "3.5.2",
     "@react-native-picker/picker": "2.1.0",
     "@react-navigation/bottom-tabs": "^6.0.9",
@@ -26,15 +29,19 @@
     "react-native": "0.64.3",
     "react-native-chart-kit": "^6.11.0",
     "react-native-element-dropdown": "^1.5.5",
+    "react-native-element-textinput": "^1.4.9",
     "react-native-elements": "^3.4.2",
     "react-native-gesture-handler": "~1.10.2",
     "react-native-modal": "^13.0.0",
+    "react-native-numeric-input": "^1.9.1",
     "react-native-reanimated": "~2.2.0",
     "react-native-responsive-linechart": "^5.7.1",
     "react-native-safe-area-context": "3.3.2",
     "react-native-screens": "~3.8.0",
     "react-native-svg": "12.1.1",
     "react-native-web": "0.17.1",
+    "react-native-wheel-scrollview-picker": "^2.0.1",
+    "react-native-wheely": "^0.4.1",
     "react-redux": "^7.2.6"
   },
   "devDependencies": {

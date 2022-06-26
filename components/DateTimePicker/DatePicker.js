@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import { Button } from "react-native-elements";
-const DatePicker = ({ setDate, title, min, max }) => {
-  const [selectedDate, setSelectedDate] = useState(new Date(1598051730000));
+const DatePicker = ({ setDate, title, min, max, isError }) => {
+  const [selectedDate, setSelectedDate] = useState(new Date());
   const [showPicker, setShowPicker] = useState(false);
   const [mode, setMode] = useState("date");
 
@@ -29,6 +29,7 @@ const DatePicker = ({ setDate, title, min, max }) => {
           title={title}
           buttonStyle={styles.button}
           buttonContainer={styles.buttonContainer}
+          disabled={isError}
         />
       </View>
       {showPicker && (

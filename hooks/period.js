@@ -1,29 +1,34 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { ROOT_URL } from "../constants/URL";
 
-const useTimePeriod = (locationID) => {
+const useTimePeriod = (locationID, flag) => {
   const [period, setPeriod] = useState({});
-  const [error, setError] = useState({});
-
+  const [error, setError] = useState(false);
+  //console.log(locationID, flag);
   useEffect(() => {
     const fetchTimePeriod = async () => {
       try {
-        console.log(
-          ROOT_URL + `/location/${locationID}` + `/microclimate/all/period`
-        );
-        const response = await axios.get(
-          ROOT_URL + `/location/${locationID}` + `/microclimate/all/period`
-        );
-        let timePeriod = response.data;
-        setPeriod(timePeriod);
+        if (flag) {
+          // console.log(
+          //   ROOT_URL + `/location/${locationID}` + `/microclimate/all/period`
+          // );
+          const response = await axios.get(
+            ROOT_URL + `/location/${locationID}` + `/microclimate/all/period`
+          );
+          let timePeriod = response.data;
+          // console.log(timePeriod);
+          setPeriod(timePeriod);
+          setError(false);
+        }
       } catch (error) {
-        setError(error);
+        setError(true);
       }
     };
     fetchTimePeriod();
-  }, [locationID]);
+  }, [locationID, flag]);
 
-  return period;
+  return [period, error];
 };
 
 export default useTimePeriod;

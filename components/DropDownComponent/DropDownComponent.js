@@ -14,11 +14,18 @@ const data = [
   { label: "Item 8", value: "8" },
 ];
 */
-const DropdownComponent = ({ setSelectedValue, label, value, data }) => {
+const DropdownComponent = ({
+  setSelectedValue,
+  label,
+  value,
+  data,
+  isError,
+}) => {
   const [item, setItem] = useState({});
-
+  //console.log(data);
   return (
     <Dropdown
+      disable={isError}
       style={styles.dropdown}
       placeholderStyle={styles.placeholderStyle}
       selectedTextStyle={styles.selectedTextStyle}

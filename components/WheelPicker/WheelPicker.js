@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet } from "react-native";
 import WheelPicker from "react-native-wheely";
-
+//not used anywhere
 const CustomWheelPicker = (props) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 

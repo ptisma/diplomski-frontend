@@ -2,51 +2,46 @@ import React, { useEffect, useState } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { useDispatch } from "react-redux";
 import axios from "axios";
+//
 import DropdownComponent from "../../components/DropDownComponent/DropDownComponent";
 import { enterLocation } from "../../redux/features/location";
 import { Button } from "react-native-elements";
 import { ROOT_URL } from "../../constants/URL";
+import useLocations from "../../hooks/locations";
 
 const LocationScreen = ({ navigation }) => {
-  const [locations, setLocations] = useState([]);
+  // const [locationsError, setLocationsError] = useState(true);
+  // const [locations, setLocations] = useState([]);
+  const [locations, locationsError] = useLocations();
   const [location, setLocation] = useState(null);
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
 
-  const loadData = async () => {
-    try {
-      console.log("Fetching locations");
-      const fetchedLocations = await axios.get(ROOT_URL + "/location");
-      setLocations(fetchedLocations.data);
-      //console.log(fetchedLocations.data);
-      /* const fetchedLocations = await axios.get(
-        "https://random-data-api.com/api/stripe/random_stripe"
-      );
-     /*  setLocations([
-        {
-          id: 1,
-          name: "Zagreb",
-        },
-        {
-          id: 2,
-          name: "Osijek",
-        },
-      ]); */
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  //move this functionality to custom hook
+  // const loadData = async () => {
+  //   try {
+  //     //console.log("Fetching locations");
+  //     //console.log(ROOT_URL + "/location");
+  //     const fetchedLocations = await axios.get(ROOT_URL + "/location");
+  //     //console.log(fetchedLocations);
+  //     setLocations(fetchedLocations.data);
+  //     setLocationsError(false);
+  //   } catch (error) {
+  //     setLocationsError(true);
+  //     console.log(error);
+  //   }
+  // };
   useEffect(() => {
-    //alert("useEffect");
-    loadData();
+    //console.log("Mounted LocationScreen");
+    // loadData();
+    return () => {};
   }, []);
 
   const buttonHandler = async (e) => {
     setLoading(true);
-    await loadData();
-    setLoading(false);
+    // await loadData();
     dispatch(enterLocation({ set: true, location: location }));
-    //setShowGraph(true);
+    setLoading(false);
   };
   return (
     <View style={styles.container}>
@@ -55,6 +50,7 @@ const LocationScreen = ({ navigation }) => {
         label={"name"}
         value={"id"}
         data={locations}
+        isError={locationsError}
       />
       <View>
         <Button
@@ -74,6 +70,7 @@ export default LocationScreen;
 
 const styles = StyleSheet.create({
   container: {
+    display: "flex",
     padding: 10,
   },
   button: {

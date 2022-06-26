@@ -1,22 +1,22 @@
 import React from "react";
-import { View, Text, StyleSheet, useColorScheme } from "react-native";
+import { StyleSheet, useColorScheme } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import {
   NavigationContainer,
   DefaultTheme,
   DarkTheme,
 } from "@react-navigation/native";
-
-import Drawer from "./drawer/Drawer";
 import { useSelector } from "react-redux";
+//
 import LocationScreen from "./screens/location/LocationScreen";
+import Drawer from "./drawer/Drawer";
 
 const Stack = createNativeStackNavigator();
 const Main = () => {
   const { location, set } = useSelector((state) => state.location.value);
   const scheme = useColorScheme();
   return (
-    <NavigationContainer theme={scheme === "dark" ? DarkTheme : DefaultTheme}>
+    <NavigationContainer>
       <Stack.Navigator
         screenOptions={{
           headerStyle: {},
@@ -60,10 +60,4 @@ const styles = StyleSheet.create({
   },
 });
 
-/*
-<View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-*/
 export default Main;

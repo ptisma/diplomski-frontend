@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import { StyleSheet, View, Text } from "react-native";
 import { TextInput } from "react-native-element-textinput";
 
-const TextInputComponent = (props) => {
+const TextInputComponent = ({ value, setValue, label, isError }) => {
   return (
     <View style={styles.container}>
-      <Text>{props.label}</Text>
+      <Text>{label}</Text>
       <TextInput
-        value={props.value}
+        editable={!isError}
+        value={value}
         style={styles.input}
         inputStyle={styles.inputStyle}
         labelStyle={styles.labelStyle}
@@ -16,7 +17,7 @@ const TextInputComponent = (props) => {
         placeholder="YYYY"
         placeholderTextColor="gray"
         onChangeText={(text) => {
-          props.setValue(text);
+          setValue(text);
         }}
       />
     </View>
